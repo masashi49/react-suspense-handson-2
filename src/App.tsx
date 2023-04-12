@@ -14,7 +14,7 @@ function App() {
       setCounter((counter) => counter + 1);
     });
   };
-  const time = useTime();
+  const time = 0; //useTime();
   return (
     <div className="text-center">
       <h1 className="text-2xl">React App!</h1>
