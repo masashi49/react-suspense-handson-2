@@ -3,6 +3,7 @@ import { useData } from "./hooks/useData";
 import { fetchData1 } from "./lib/fetchData1";
 
 const ShowData: FC<{ dataKey: number }> = ({ dataKey }) => {
+  console.log(dataKey);
   const data = useData(`ShowDaata : ${dataKey}`, fetchData1);
   return (
     <p>
