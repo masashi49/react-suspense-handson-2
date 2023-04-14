@@ -7,6 +7,7 @@ import { useTime } from "./hooks/useTime";
 function App() {
   const [sleepIsShown, setSleepIsShown] = useState(false);
   const [counter, setCounter] = useState(0);
+  const time = useTime();
 
   const startTrans = () => {
     startTransition(() => {
@@ -14,7 +15,7 @@ function App() {
       setCounter((counter) => counter + 1);
     });
   };
-  const time = 0; //useTime();
+
   return (
     <div className="text-center">
       <h1 className="text-2xl">React App!</h1>
@@ -22,15 +23,16 @@ function App() {
       <Suspense fallback={<p>Loading...</p>}>
         <ShowData dataKey={counter} />
       </Suspense>
-
       <p>
         <button
           className="border p-1"
           onClick={() => {
-            startTrans();
+            startTransition(() => {
+              setCounter((c) => c + 1);
+            });
           }}
         >
-          Show Sleep1s {counter}
+          Counter is {counter}
         </button>
       </p>
     </div>

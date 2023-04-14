@@ -12,7 +12,7 @@ export function useTime() {
   useEffect(() => {
     const interval = setInterval(() => {
       setTime(formatter.format(new Date()));
-    }, 1000);
+    }, 100);
     return () => clearInterval(interval);
   });
   return time;
