@@ -12,7 +12,6 @@ function App() {
   const [, startTransition2] = useTransition();
   const startTrans = () => {
     startTransition(() => {
-      console.log(1);
       setCounter((counter) => counter + 1);
     });
   };
